@@ -7,27 +7,30 @@ function ArtistList() {
     <div className="artist-list">
       <h2>Music Legends</h2>
 
-      <div className="artist-card">
-        <h3>Kurt Cobain</h3>
-        <p>Band: Nirvana</p>
-        <p>Genre: Grunge</p>
-        <p>Died: 1994</p>
-      </div>
+      <div className="artist-cards">
+        <ArtistCard
+        name="Kurt Cobain"
+        band="Nirvana"
+        genre="Grunge"
+        died="1994"
+    
+      />
+        <ArtistCard
+        name="Amy Winehouse"
+        band="Solo Artist"
+        genre="Soul / RNB"
+        died="2011"
+        
+        />
+        
+        <ArtistCard
+        name="Jimi Hendrix"
+        band="Jimi Hendrix Experience"
+        genre="Rock / Blues"
+        died="1970"
+      />
 
-      <div className="artist-card">
-        <h3>Amy Winehouse</h3>
-        <p>Band: Solo Artist</p>
-        <p>Genre: Soul / R&B</p>
-        <p>Died: 2011</p>
-      </div>
-
-      <div className="artist-card">
-        <h3>Jimi Hendrix</h3>
-        <p>Band: Jimi Hendrix Experience</p>
-        <p>Genre: Rock / Blues</p>
-        <p>Died: 1970</p>
-      </div>
-
+    </div>
     </div>
   );
 }
