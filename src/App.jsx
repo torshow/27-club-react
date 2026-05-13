@@ -3,6 +3,7 @@ import NavBar from './components/NavBar';
 import ArtistList from './components/ArtistList';
 import SearchBar from './components/SearchBar';
 import Hero from './components/Hero';
+import AddProjectForm from './components/AddProjectForm';
 import { useState } from 'react';
 
 function App() {
@@ -33,12 +34,28 @@ function App() {
     }
   ]);
 
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const addProject = (project) => {
+    setProjects([...projects, { id: Date.now(), ...project }]);
+  };
+
+  const filteredProjects = projects.filter(project =>
+    project.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    project.client.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    project.category.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div>
       <NavBar/>
       <Hero/>
-      <ArtistList projects={projects}/>
-      <SearchBar/>
+      <AddProjectForm onAddProject={addProject} />
+      <SearchBar 
+        searchTerm={searchTerm} 
+        onSearchChange={setSearchTerm} 
+      />
+      <ArtistList projects={filteredProjects}/>
     </div>
   );
 }
