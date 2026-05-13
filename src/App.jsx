@@ -37,7 +37,7 @@ function App() {
     <div>
       <NavBar/>
       <Hero/>
-      <ArtistList/>
+      <ArtistList projects={projects}/>
       <SearchBar/>
     </div>
   );
